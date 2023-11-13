@@ -8,6 +8,8 @@ use Livewire\Component;
 class Posts extends Component
 {
     public $title,$body;
+    public $posts;
+
 
     public function store()
     {
@@ -18,12 +20,19 @@ class Posts extends Component
         ]);
         Post::create($validated_data);
         session()->flash('successmessage','Successfully Saved!!!');
+        $this->resetInput();
+    }
 
+    private function resetInput()
+    {
+        $this->title='';
+        $this->body='';
 
     }
 
     public function render()
     {
+        $this->posts=Post::all();
         return view('livewire.posts');
     }
 }
