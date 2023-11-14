@@ -1,5 +1,4 @@
-
-<h1>Create Form</h1>
+<h2>Edit Form</h2>
 <form>
     <div class="mb-3">
       <label for="title" class="form-label">Title</label>
@@ -16,6 +15,8 @@
       @enderror
     </div>
 
-    <button wire:click.prevent="store()" type="submit" class="btn btn-primary">Submit</button>
+    <button wire:click.prevent="update()" type="submit" class="btn btn-success">Update</button>
+    <button wire:click.prevent="updatecancel()" type="submit" class="btn btn-danger">Cancel</button>
+
   </form>
 
